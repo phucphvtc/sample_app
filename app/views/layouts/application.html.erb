@@ -7,11 +7,30 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%# <%= render 'layouts/shim' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%# <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "sample app",'#', id: 'logo' %>
+        <%# <nav>
+          <ul class = "nav navbar-nav navbar-right">
+            <li><%= link_to "Home", '#' %></li>
+            <%# <li><%= link_to "Help", '#' %></li>
+            <%# <li><%= link_to "Log in", '#' %></li>
+            <%# <li><a href="http://127.0.0.1:3000/static_pages/help">Home</a></li> %>
+          <%# </ul> %>
+        <%# </nav> %>
+      <%# </div> %>
+    <%# </header> %>
+    <%= render 'layouts/header'%>
+    <div class="container">
+      <%= yield %>
+    <%= render 'layouts/footer'%>
+
+    </div>
   </body>
 </html>
