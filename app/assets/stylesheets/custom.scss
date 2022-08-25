@@ -1,7 +1,7 @@
- //= link custom.css
- @import "bootstrap-sprockets";
- @import "bootstrap";
-
+@import "bootstrap-sprockets";
+@import "bootstrap";
+$gray-medium-light: #eaeaea;
+$gray-light: #777;
 
 body{
      padding-top: 60px;
@@ -21,7 +21,7 @@ textarea{
 }
 h1,h2,h3,h4,h5,h6{
     line-height: 1;
-    color: red;
+    color: black;
 }
 h1 {
     font-size: 3em;
@@ -39,14 +39,15 @@ h2 {
     color: #777;
 }
 p {
-font-size: 1.1em;
-line-height: 1.7em;
+    font-size: 1.1em;
+    line-height: 1.7em;
 }
 footer {
     margin-top: 45px;
     padding-top: 5px;
     border-top: 1px solid #eaeaea;
     color: #777;
+   
 }
 footer a {
     color: #555;
@@ -65,7 +66,44 @@ footer ul li {
     float: left;
     margin-left: 15px;
 }
-h1{
-    color: red;
+#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
 }
-   
+#logo:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.img_tag{
+    text-align: center;
+}
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+
+a {
+    color: #555;
+    &:hover {
+    color: #222;
+    }
+}
+small {
+  float: left;
+}
+ul {
+  float: right;
+  list-style: none;
+  li {
+    float: left;
+    margin-left: 15px;
+  }
+}
+}
