@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   #user
   get '/signup', to: 'users#new'
   get '/show', to:'users#show'
+  get '/index',to: 'users#index'
 
   #Sessions
   get '/login', to: 'sessions#new'
