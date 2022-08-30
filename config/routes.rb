@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  default_url_options :host => "localhost:3000"
   #static_pages
   get 'static_pages/home', as: 'home'
   get '/help', to: 'static_pages#help'
