@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-
+  resources :account_activations, only: [:edit]
   resources :users
   # Defines the root path route ("/")
   # root "articles#index"
