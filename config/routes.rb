@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get 'static_pages/contact', as: 'contact'
   #user
-  get '/signup', to: 'users#new'
+  # get '/signup', to: 'users#new'
   # get '/show', to:'users#show'
   # get '/index',to: 'users#index'
 
