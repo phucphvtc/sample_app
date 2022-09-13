@@ -31,7 +31,6 @@ class User < ApplicationRecord
   # We reuse the remember digest for convenience.
   def session_token
     remember_digest || remember
-    
   end
 
   def User.new_token
@@ -58,7 +57,13 @@ class User < ApplicationRecord
     Micropost.where("user_id = ?", id)
   end
 
-  
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
+  end
+
+
   private
     def downcase_email
       self.email = email.downcase

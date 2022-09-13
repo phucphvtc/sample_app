@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get 'static_pages/contact', as: 'contact'
   #user
   get '/signup', to: 'users#new'
-  get '/show', to:'users#show'
-  get '/index',to: 'users#index'
+  # get '/show', to:'users#show'
+  # get '/index',to: 'users#index'
 
   #Sessions
   get '/login', to: 'sessions#new'
@@ -25,4 +25,3 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 end
- 
