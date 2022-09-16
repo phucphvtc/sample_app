@@ -7,8 +7,12 @@ class UsersController < ApplicationController
   end
   
   def index
-    # @users = User.all
+    @users = User.all
     @users = User.paginate(page: params[:page])
+    
+    @q = User.ransack(params[:q])
+    @users = @q.result.paginate(:page => params[:page])
+
   end
 
   def show
@@ -19,8 +23,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
+      
       redirect_to root_url
     else 
       render 'new'

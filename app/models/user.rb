@@ -1,4 +1,6 @@
+
 class User < ApplicationRecord
+  include Ransack
   has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token
   before_save :downcase_email
@@ -13,7 +15,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum:6, message: 'Mat khau it nhat 6 ki tu'},allow_nil: true
 
   self.per_page = 5
-
+   
   def User.digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
       BCrypt::Engine.cost
